@@ -1,23 +1,34 @@
 {
-    "private": true,
-    "scripts": {
-        "dev": "npm run development",
-        "development": "mix",
-        "watch": "mix watch",
-        "watch-poll": "mix watch -- --watch-options-poll=1000",
-        "hot": "mix watch --hot",
-        "prod": "npm run production",
-        "production": "mix --production"
-    },
-    "devDependencies": {
-        "@tailwindcss/forms": "^0.3.1",
-        "@tailwindcss/typography": "^0.4.0",
-        "alpinejs": "^3.0.6",
-        "axios": "^0.21",
-        "laravel-mix": "^6.0.6",
-        "lodash": "^4.17.19",
-        "postcss": "^8.1.14",
-        "postcss-import": "^14.0.1",
-        "tailwindcss": "^2.2.2"
-    }
+  "name": "user-manager",
+  "version": "1.0.0",
+  "description": "First Freelance proyect\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[D\u001b[C\u001b[f",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MagicMagu/user-manager.git"
+  },
+  "keywords": [
+    "user-manager"
+  ],
+  "author": "Arcmaster",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MagicMagu/user-manager/issues"
+  },
+  "homepage": "https://github.com/MagicMagu/user-manager#readme",
+  "devDependencies": {
+    "@popperjs/core": "^2.9.2",
+    "bootstrap": "^5.0.2",
+    "css-loader": "^6.2.0",
+    "jquery": "^3.6.0",
+    "popper.js": "^1.16.1",
+    "sass": "^1.35.2",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.2.1",
+    "webpack": "^5.46.0",
+    "webpack-cli": "^4.7.2"
+  }
 }
