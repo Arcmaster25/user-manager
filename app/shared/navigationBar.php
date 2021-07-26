@@ -1,6 +1,16 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
     <div class="container-fluid">
-        <a class="navbar-brand" href="index.php">User Manager</a>
+        <?php 
+            if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
+        ?>
+            <a class="navbar-brand" href="index.php?controller=Client&action=index">User Manager</a>
+        <?php 
+            }else{
+        ?>
+            <a class="navbar-brand" href="index.php">User Manager</a>
+        <?php 
+            }
+        ?>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -10,10 +20,10 @@
                     if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
                 ?>
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.php?controller=&action=">Agregar cliente</a>
+                        <a class="nav-link" aria-current="page" href="index.php?controller=Client&action=store">Agregar cliente</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="index.php?controller=&action=">Lista de clientes</a>
+                        <a class="nav-link" href="index.php?controller=Client&action=index">Lista de clientes</a>
                     </li>
                 <?php 
                     }else{
@@ -41,13 +51,13 @@
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="index.php?controller=User&action=show">Perfil</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="index.php?controller=User&action=logout">Desconectarse</a></li>
+                            <li><a class="dropdown-item" href="index.php?controller=User&action=logout">Cerrar Sesión</a></li>
                         </ul>
                     </div>
                 <?php 
                     }else{
                 ?>
-                    <a href="index.php?controller=User&action=login" class="text-white text-decoration-none">Login</a>
+                    <a href="index.php?controller=User&action=login" class="text-white text-decoration-none">Iniciar Sesión</a>
                 <?php 
                     }
                 ?>

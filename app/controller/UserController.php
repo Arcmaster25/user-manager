@@ -42,8 +42,6 @@
 
 			require('app/models/User.php');
 
-                session_start();
-
                 $message = '';
 
                 if(isset($_POST['name']) && isset($_POST['password'])){
@@ -72,7 +70,7 @@
 
                             $_SESSION['user_id'] = $get_user['id'];
 
-                            header('Location: index.php');
+                            header('Location: index.php?controller=Client&action=index');
 
                         }else{
 

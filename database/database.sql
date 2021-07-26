@@ -17,18 +17,16 @@ CREATE TABLE clients(
 	tiv VARCHAR(255),
 	correoFE VARCHAR(100) NOT NULL,
 	contrasenaFE VARCHAR(150) NOT NULL,
-	userId INT,
-	PRIMARY KEY(clientId),
-	FOREIGN KEY(userId) REFERENCES user(id)
+	PRIMARY KEY(clientId)
 );
 
 CREATE TABLE economicActivity(
 	economicId INT NOT NULL AUTO_INCREMENT, 
 	actividadEconomica VARCHAR(180) NOT NULL,
 	codigoActividad SMALLINT(6) NOT NULL,
-	userId INT,
+	clientId INT,
 	PRIMARY KEY(economicId),
-	FOREIGN KEY(userId) REFERENCES user(id)
+	FOREIGN KEY(clientId) REFERENCES clients(clientId)
 );
 
 CREATE TABLE taxReturns(
@@ -36,7 +34,7 @@ CREATE TABLE taxReturns(
 	tipo VARCHAR(180) NOT NULL,
 	periodo DATE NOT NULL,
 	ano DATE NOT NULL,
-	userId INT,
+	clientId INT,
 	PRIMARY KEY(taxId),
-	FOREIGN KEY(userId) REFERENCES user(id)
+	FOREIGN KEY(clientId) REFERENCES clients(clientId)
 );

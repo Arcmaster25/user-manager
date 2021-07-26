@@ -5,7 +5,7 @@
 	class User{
 		//Properties
 
-		//connection with database
+		//Connection with database
 		private $connection;
 
 		//Start connection at instantiation
