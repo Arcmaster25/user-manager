@@ -39,5 +39,19 @@
 			$destroy = $this->connection->query($query);
 			return $this->connection->affected_rows;
 		}
+
+		public function update($id, $arr){
+			$query = "UPDATE clients SET";
+			$client = $arr;
+			foreach($client as $key => $value){
+				
+				$query = $query . " " . $key . " = " . "'".$value."',";
+
+			}
+			$query = substr($query, 0, -1);
+			$query = $query . " WHERE clientId = " . "'".$id."'";
+			$update = $this->connection->query($query);
+			return $this->connection->affected_rows;
+		}
 	}
 ?>

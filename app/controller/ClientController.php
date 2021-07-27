@@ -86,6 +86,73 @@
 
 			require('app/views/clients/client.php');
 		}
+
+		//Edit all one client data
+		public function update(){
+
+			require('app/models/Client.php');
+			
+			$clientData = "";
+
+			$clientId = "";
+
+			if(isset($_GET['id']) && !empty($_GET['id'])){
+
+				$clientId = $_GET['id'];
+
+				$client = new Client();
+
+				$clientSearch = $client->get_by_id($clientId);
+
+				if(count($clientSearch) > 0){
+					$clientData = $clientSearch;
+				}
+			}
+
+			if(isset($_POST['nombre']) && isset($_POST['cedula']) && isset($_POST['nombreComercial']) && isset($_POST['telefono']) && isset($_POST['direccion']) && isset($_POST['representanteLegal']) && isset($_POST['cedulaRepresentanteLegal']) && isset($_POST['correoFE']) && isset($_POST['contrasenaFE'])){
+				
+				$arr = array(
+					"nombre" => $_POST['nombre'],
+					"cedula" => $_POST['cedula'],
+					"nombreComercial" => $_POST['nombreComercial'],
+					"telefono" => $_POST['telefono'],
+					"direccion" => $_POST['direccion'],
+					"representanteLegal" => $_POST['representanteLegal'],
+					"cedulaRepresentanteLegal" => $_POST['cedulaRepresentanteLegal'],
+					"correoFE" => $_POST['correoFE'],
+					"contrasenaFE" => $_POST['contrasenaFE']
+				);
+
+				$client = new Client();
+
+				$update = $client->update($clientId, $arr);
+
+				if($update == 1){
+					header('Location: index.php?controller=Client&action=update&id='.$clientId);
+				}
+			}
+
+			require('app/views/clients/clientEdit.php');
+		}
+
+		//Delete user
+		public function destroy(){
+
+			require('app/models/Client.php');
+
+			if(isset($_GET['id']) && !empty($_GET['id'])){
+
+				$clientId = $_GET['id'];
+
+				$client = new Client();
+
+				$clientDelete = $client->destroy($clientId);
+
+				if($clientDelete == 1){
+					header('Location: index.php?controller=Client&action=index');
+				}
+			}
+		}
 	}
 
 	if(isset($_GET['action']) && !empty($_GET['action'])){
