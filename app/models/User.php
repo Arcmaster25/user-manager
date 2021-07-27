@@ -19,12 +19,29 @@
 		public function store($name, $password){
 			$query = "INSERT INTO user (nombre, contrasena) VALUES ('$name', '$password')";
 			$store = $this->connection->query($query);
+			$lastId = $this->connection->insert_id;
+			$queryTwo = "INSERT INTO permits (tipo, userId) VALUES ('visitant', '$lastId')";
+			$this->connection->query($queryTwo);
 			return $store->affected_rows;
+		}
+
+		//Set permissions
+		public function set_permissions($userId, $type){
+			$query = "UPDATE permits SET tipo = '$type', userId = '$userId'";
+			$store = $this->connection->query($query);
+			return $store->affected_rows;
+		}
+
+		//Get all users
+		public function get_all(){
+			$query = "SELECT user.nombre, user.contrasena, permits.tipo FROM user INNER JOIN permits WHERE user.id = permits.userId";
+			$get_all = $this->connection->query($query);
+			return $get_all->fetch_all(MYSQLI_ASSOC);
 		}
 
 		//Get user data
 		public function get($id){
-			$query = "SELECT * FROM user WHERE id='$id'";
+			$query = "SELECT user.id, user.nombre, user.contrasena, permits.tipo FROM user INNER JOIN permits WHERE user.id = permits.userId AND user.id = '$id'";
 			$get = $this->connection->query($query);
 			return $get->fetch_assoc();
 		}

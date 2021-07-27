@@ -23,6 +23,10 @@
     						<input type="text" readonly class="form-control-plaintext text-center" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['cedula']; } ?>">
   						</div>
   						<div class="mb-3 col-12">
+    						<label for="" class="form-labe fw-bold">Cédula ATV</label>
+    						<input type="text" readonly class="form-control-plaintext text-center" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['cedulaATV']; } ?>">
+  						</div>
+  						<div class="mb-3 col-12">
     						<label class="form-label fw-bold" for="">Nombre Comercial</label>
     						<input type="text" readonly class="form-control-plaintext text-center" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['nombreComercial']; } ?>">
   						</div>
@@ -42,7 +46,7 @@
   						</div>
   						<div class="mb-3 col-12">
     						<label class="form-label fw-bold" for="">Regimen</label>
-    						<input type="text" readonly class="form-control-plaintext text-center" disabled>
+    						<input type="text" readonly class="form-control-plaintext text-center" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['regimen']; } ?>">
   						</div>
   						<div class="mb-3 col-12">
     						<label class="form-label fw-bold" for="">Representante Legal</label>
@@ -64,6 +68,10 @@
     						<label class="form-label fw-bold" for="">Contraseña FE</label>
     						<input type="text" readonly class="form-control-plaintext text-center" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['contrasenaFE']; } ?>">
   						</div>
+  						<div class=" col-12">
+    						<label class="form-label fw-bold" for="">Contraseña ATV</label>
+    						<input type="text" readonly class="form-control-plaintext text-center" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['contrasenaATV']; } ?>">
+  						</div>
   					</div>
   					<hr>
   					<div class="input-group mb-3">
@@ -76,22 +84,29 @@
     							</tr>
   							</thead>
   							<tbody>
-  								
+  								<tr>
+  									<td>
+  										<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['actividadEconomica']; } ?>
+  									</td>
+  									<td>
+  										<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['codigoActividad']; } ?>
+  									</td>
+  								</tr>
   							</tbody>
   						</table>
   					</div>
   					<hr>
-  					<div class="input-group mb-3">
+  					<!--<div class="input-group mb-3">
   						<div class="">
     						<label class="form-label" for="">Tarifa</label>
-    						<input type="text" readonly class="form-control-plaintext" disabled>
+    						<input type="text" readonly class="form-control-plaintext">
   						</div>
   						<div class="">
     						<label class="form-label" for="">Al Día A</label>
-    						<input type="text" readonly class="form-control-plaintext" disabled>
+    						<input type="text" readonly class="form-control-plaintext">
   						</div>
   					</div>
-  					<hr>
+  					<hr>-->
   					<div class="input-group mb-3">
   						<h4 class="text-center">Declaraciones Tributarias</h4>
   						<table class="table table-striped table-hover">
@@ -103,7 +118,17 @@
     							</tr>
   							</thead>
   							<tbody>
-  								
+  								<tr>
+  									<td>
+  										<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['tipoTarifa']; } ?>
+  									</td>
+  									<td>
+  										<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['periodoTarifa']; } ?>
+  									</td>
+  									<td>
+  										<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['anoTarifa']; } ?>
+  									</td>
+  								</tr>
   							</tbody>
   						</table>
   					</div>

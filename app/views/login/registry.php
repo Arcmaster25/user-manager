@@ -22,7 +22,7 @@
 <div class='container my-5'>
     <div class='card text-center'>
         <div class='card-header'>
-            <h2 class='card-title'>Registrarse</h2>
+            <h2 class='card-title'>Registrar Usuario</h2>
         </div>
         <div class='card-body'>
             <form action='index.php?controller=User&action=store' method='POST'>
@@ -36,7 +36,6 @@
                 </div>
                 <div class='form-group'>
                     <button type='success' class='btn btn-primary'>Registrar</button>
-                    <a href="index.php?controller=User&action=login">Si ya estas registrado ingresa</a>
                 </div>
             </form>
         </div>

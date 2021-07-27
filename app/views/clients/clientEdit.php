@@ -23,6 +23,10 @@
     						<input type="number" class="form-control text-center" name="cedula" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['cedula']; } ?>">
   						</div>
   						<div class="mb-3 col-12">
+    						<label for="" class="form-labe fw-bold">Cédula ATV</label>
+    						<input type="number" class="form-control text-center" name="cedulaATV" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['cedulaATV']; } ?>">
+  						</div>
+  						<div class="mb-3 col-12">
     						<label class="form-label fw-bold" for="">Nombre Comercial</label>
     						<input type="text" class="form-control text-center" name="nombreComercial" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['nombreComercial']; } ?>">
   						</div>
@@ -42,7 +46,7 @@
   						</div>
   						<div class="mb-3 col-12">
     						<label class="form-label fw-bold" for="">Regimen</label>
-    						<input type="text" readonly class="form-control-plaintext text-center" disabled>
+    						<input type="text" class="form-control text-center" name="regimen" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['regimen']; } ?>">
   						</div>
   						<div class="mb-3 col-12">
     						<label class="form-label fw-bold" for="">Representante Legal</label>
@@ -64,11 +68,23 @@
     						<label class="form-label fw-bold" for="">Contraseña FE</label>
     						<input type="text" class="form-control text-center" name="contrasenaFE" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['contrasenaFE']; } ?>">
   						</div>
+  						<div class=" col-12">
+    						<label class="form-label fw-bold" for="">Contraseña ATV</label>
+    						<input type="text" class="form-control text-center" name="contrasenaATV" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['contrasenaATV']; } ?>">
+  						</div>
   					</div>
   					<hr>
   					<div class="input-group mb-3">
   						<h4 class="text-center">Actividad Económica</h4>
-  						<table class="table table-striped table-hover">
+  						<div class="mb-3 col-12">
+    						<label class="form-label fw-bold" for="">Nombre</label>
+    						<input type="text" class="form-control text-center" name="actividadEconomica" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['actividadEconomica']; } ?>">
+  						</div>
+  						<div class=" col-12">
+    						<label class="form-label fw-bold" for="">Codigo</label>
+    						<input type="number" class="form-control text-center" name="codigoActividad" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['codigoActividad']; } ?>">
+  						</div>
+  						<!--<table class="table table-striped table-hover">
   							<thead>
     							<tr>
       								<th scope="col">Nombre</th>
@@ -76,12 +92,17 @@
     							</tr>
   							</thead>
   							<tbody>
-  								
+  								<td>
+  									<input type="text" class="form-control text-center" name="actividadEconomica" value="<?php //if(isset($clientData) && !empty($clientData))  { echo $clientData['actividadEconomica']; } ?>">
+  								</td>
+  								<td>
+  									<input type="number" class="form-control text-center" name="codigoActividad" value="<?php //if(isset($clientData) && !empty($clientData))  { echo $clientData['codigoActividad']; } ?>">
+  								</td>
   							</tbody>
-  						</table>
+  						</table>-->
   					</div>
   					<hr>
-  					<div class="input-group mb-3">
+  					<!--<div class="input-group mb-3">
   						<div class="">
     						<label class="form-label" for="">Tarifa</label>
     						<input type="text" readonly class="form-control-plaintext" disabled>
@@ -91,10 +112,22 @@
     						<input type="text" readonly class="form-control-plaintext" disabled>
   						</div>
   					</div>
-  					<hr>
+  					<hr>-->
   					<div class="input-group mb-3">
   						<h4 class="text-center">Declaraciones Tributarias</h4>
-  						<table class="table table-striped table-hover">
+  						<div class="mb-3 col-12">
+    						<label class="form-label fw-bold" for="">Tipo</label>
+    						<input type="text" class="form-control text-center" name="tipoTarifa" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['tipoTarifa']; } ?>">
+  						</div>
+  						<div class="mb-3 col-12">
+    						<label class="form-label fw-bold" for="">Periodo</label>
+    						<input type="datetime-local" class="form-control text-center" name="periodoTarifa" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['periodoTarifa']; } ?>">
+  						</div>
+  						<div class=" col-12">
+    						<label class="form-label fw-bold" for="">Año</label>
+    						<input type="date" class="form-control text-center" name="anoTarifa" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['anoTarifa']; } ?>">
+  						</div>
+  						<!--<table class="table table-striped table-hover">
   							<thead>
     							<tr>
       								<th scope="col">Tipo</th>
@@ -103,12 +136,20 @@
     							</tr>
   							</thead>
   							<tbody>
-  								
+  								<td>
+  									<input type="text" class="form-control text-center" name="tipoTarifa" value="<?php //if(isset($clientData) && !empty($clientData))  { echo $clientData['tipoTarifa']; } ?>">
+  								</td>
+  								<td>
+  									<input type="datetime-local" class="form-control text-center" name="periodoTarifa" value="<?php //if(isset($clientData) && !empty($clientData))  { echo $clientData['periodoTarifa']; } ?>">
+  								</td>
+  								<td>
+  									<input type="date" class="form-control text-center" name="anoTarifacodigoActividad" value="<?php //if(isset($clientData) && !empty($clientData))  { echo $clientData['anoTarifa']; } ?>">
+  								</td>
   							</tbody>
-  						</table>
+  						</table>-->
   					</div>
   					<hr>
-  					<button type="submit" class="btn btn-success">Actualizar Datos</button>
+  					<button type="submit" class="btn btn-success">Editar Datos</button>
 				</form>
   			</div>
 		</div>

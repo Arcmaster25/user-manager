@@ -24,8 +24,16 @@
   						<input type="number" class="form-control text-center" name="identificationCard" required>
 					</div>
 					<div class="mb-3 col-12">
+  						<label for="identificationCardATV" class="form-label">Cédula ATV</label>
+  						<input type="number" class="form-control text-center" name="identificationCardATV" required>
+					</div>
+					<div class="mb-3 col-12">
   						<label for="tradename" class="form-label">Nombre Comercial</label>
   						<input type="text" class="form-control text-center" name="tradename" required>
+					</div>
+					<div class="mb-3 col-12">
+  						<label for="regime" class="form-label">Regimen</label>
+  						<input type="text" class="form-control text-center" name="regime" required>
 					</div>
 					<div class="mb-3 col-12">
   						<label for="phone" class="form-label">teléfono</label>
@@ -45,7 +53,7 @@
 					</div>
 					<div class="mb-3 col-12">
   						<label for="tiv" class="form-label">TIV</label>
-  						<input type="file" class="form-control" name="tiv">
+  						<input type="file" class="form-control" name="tiv" disabled>
 					</div>
 					<div class="mb-3 col-12">
   						<label for="emailFE" class="form-label">CorreoFE</label>
@@ -55,31 +63,35 @@
   						<label for="passwordFE" class="form-label">ContraseñaFE</label>
   						<input type="text" class="form-control text-center" name="passwordFE" required>
 					</div>
+					<div class="col-12">
+  						<label for="passwordATV" class="form-label">ContraseñaATV</label>
+  						<input type="text" class="form-control text-center" name="passwordATV" required>
+					</div>
   				</div>
   				<hr>
   				<div class="input-group mb-3"> 
   					<div class="my-3 col-6">
-  						<label for="" class="form-label">Actividad Economica</label>
-  						<input type="text" class="form-control mr-1 text-center" disabled>
+  						<label for="economicActivity" class="form-label">Actividad Economica</label>
+  						<input type="text" name="economicActivity" class="form-control mr-1 text-center" required>
 					</div>
 					<div class="my-3 col-6">
-  						<label for="" class="form-label">Código Actividad</label>
-  						<input type="number" class="form-control ml-1 text-center" disabled>
+  						<label for="activityCode" class="form-label">Código Actividad</label>
+  						<input type="number" name="activityCode" class="form-control ml-1 text-center" required>
 					</div>
   				</div>
   				<hr>
   				<div class="input-group mb-3">
   					<div class="my-3 col-4">
-  						<label for="" class="form-label">Tipo Declaración Tributaria</label>
-  						<input type="text" class="form-control text-center" disabled>
+  						<label for="taxReturnType" class="form-label">Tipo Declaración Tributaria</label>
+  						<input type="text" name="taxReturnType" class="form-control text-center" required>
 					</div>
 					<div class="my-3 col-4">
-  						<label for="" class="form-label">Período Declariación Tributaria</label>
-  						<input type="datetime-local" class="form-control text-center" disabled>
+  						<label for="taxDeclarationPeriod" class="form-label">Período Declariación Tributaria</label>
+  						<input type="datetime-local" name="taxDeclarationPeriod" class="form-control text-center" required>
 					</div>
 					<div class="my-3 col-4">
-  						<label for="" class="form-label">Año Declariación Tributaria</label>
-  						<input type="date" class="form-control text-center" disabled>
+  						<label for="yearTaxReturn" class="form-label">Año Declariación Tributaria</label>
+  						<input type="date" name="yearTaxReturn" class="form-control text-center" required>
 					</div>
   				</div>
   				<div class="m-1">

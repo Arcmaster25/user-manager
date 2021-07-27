@@ -28,7 +28,6 @@
                         </div>
                         <div class='form-group'>
                             <button type='success' class='btn btn-primary'>Login</button>
-                            <a href='index.php?controller=User&action=store' class='btn btn-link'>Registry</a>
                         </div>
                     </form>
                 </div>

@@ -13,15 +13,15 @@
 		}
 
 		//New client
-		public function store($name, $identificationCard, $tradename, $phone, $direction, $nameLegalRepresentative, $idLegalRepresentative, $emailFE, $passwordFE, $tiv = ""){
-			$query = "INSERT INTO clients (nombre, cedula, nombreComercial, telefono, direccion, representanteLegal, cedulaRepresentanteLegal, tiv, correoFE, contrasenaFE) VALUES ('$name', '$identificationCard', '$tradename', '$phone', '$direction', '$nameLegalRepresentative', '$idLegalRepresentative', '$tiv', '$emailFE', '$passwordFE')";
+		public function store($name, $identificationCard, $identificationCardATV, $tradename, $regime, $phone, $direction, $nameLegalRepresentative, $idLegalRepresentative, $emailFE, $passwordFE, $passwordATV, $economicActivity, $activityCode, $taxReturnType, $taxDeclarationPeriod, $yearTaxReturn, $tiv = ""){
+			$query = "INSERT INTO clients (nombre, cedula, cedulaATV, nombreComercial, telefono, direccion, regimen, representanteLegal, cedulaRepresentanteLegal, tiv, correoFE, contrasenaFE, contrasenaATV, actividadEconomica, codigoActividad, tipoTarifa, periodoTarifa, anoTarifa) VALUES ('$name', '$identificationCard', '$identificationCardATV', '$tradename', '$phone', '$direction', '$regime', '$nameLegalRepresentative', '$idLegalRepresentative', '$tiv', '$emailFE', '$passwordFE', '$passwordATV', '$economicActivity', '$activityCode', '$taxReturnType', '$taxDeclarationPeriod', '$yearTaxReturn')";
 			$store = $this->connection->query($query);
 			return $this->connection->affected_rows;
 		}
 
 		//Get all client's
 		public function get_all(){
-			$query = "SELECT clientId, nombre, cedula, tiv, correoFE, contrasenaFE FROM clients";
+			$query = "SELECT clientId, nombre, cedula, cedulaATV, tiv, correoFE, contrasenaFE, contrasenaATV FROM clients";
 			$get_all = $this->connection->query($query);
 			return $get_all->fetch_all(MYSQLI_ASSOC);
 		}

@@ -16,6 +16,8 @@
     			<tr>
       				<th scope="col">Cédula</th>
       				<th scope="col">Cliente</th>
+      				<th scope="col">Cédula ATV</th>
+      				<th scope="col">Contraseña ATV</th>
       				<th scope="col">TIV</th>
       				<th scope="col">Correo FE</th>
       				<th scope="col">Contraseña FE</th>
@@ -32,27 +34,37 @@
     					foreach ($clients as $clientData) {
     				?>
     					<tr>
-    						<td>
+    						<td class="text-monospace">
     				    		<?php 
     				    			echo $clientData['cedula'];
     				    		?>
     						</td>
-    						<td>
+    						<td class="text-monospace">
     				    		<?php 
     				    			echo $clientData['nombre'];
     				    		?>
     						</td>
-    						<td>
+    						<td class="text-monospace">
+    				    		<?php 
+    				    			echo $clientData['cedulaATV'];
+    				    		?>
+    						</td>
+    						<td class="text-monospace">
+    				    		<?php 
+    				    			echo $clientData['contrasenaATV'];
+    				    		?>
+    						</td>
+    						<td class="text-monospace">
     				    		<?php 
     				    			echo $clientData['tiv'];
     				    		?>
     						</td>
-    						<td>
+    						<td class="text-monospace">
     				    		<?php 
     				    			echo $clientData['correoFE'];
     				    		?>
     						</td>
-    						<td>
+    						<td class="text-monospace">
     				    		<?php 
     				    			echo $clientData['contrasenaFE'];
     				    		?>

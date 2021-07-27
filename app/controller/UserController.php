@@ -13,19 +13,17 @@
 
             	$user = $_POST['name'];
 
-            	$password = $_POST['password'];
-
-            	$password_hashed = password_hash($password, PASSWORD_BCRYPT);
+            	$password = $_POST['password'];;
 
             	$user_model = new User();
 
-                $create_user = $user_model->store($user, $password_hashed);
+                $create_user = $user_model->store($user, $password);
 
                 if($create_user != -1){
 
                     $message = 'El usuario fue creado de forma satisfactoria';
 
-                    header('Location: index.php?controller=user&action=login');
+                    header('Location: index.php?controller=Client&action=index');
 
                 }else{
 
@@ -41,6 +39,8 @@
 		public function login(){
 
 			require('app/models/User.php');
+
+                //session_start();
 
                 $message = '';
 
@@ -60,15 +60,21 @@
 
                     }else{
 
-                        $password_db = $get_user['contrasena'];
+                        //$password_db = $get_user['contrasena'];
 
-                        $password_validate = password_verify($password, $password_db);
+                        //$password_validate = password_verify($password, $password_db);
 
-                        if($get_user['nombre'] == $user && $password_validate == TRUE){
+                        if($get_user['nombre'] == $user && $get_user['contrasena'] == $password){
 
-                            $_SESSION['user_name'] = $get_user['nombre'];
+                            $userId = $get_user['id'];
 
-                            $_SESSION['user_id'] = $get_user['id'];
+                            $userData = $user_model->get($userId);
+
+                            $_SESSION['user_name'] = $userData['nombre'];
+
+                            $_SESSION['user_id'] = $userData['id'];
+
+                            $_SESSION['user_type'] = $userData['tipo'];
 
                             header('Location: index.php?controller=Client&action=index');
 
@@ -88,16 +94,11 @@
         public function show(){
             require('app/models/User.php');
             session_start();
-            $user_name = '';
+            $user = '';
             $message = '';
             $user_id = '';
                 if(isset($_SESSION['user_id'])){
                     $user_id = $_SESSION['user_id'];
-                    $user_model = new User();
-                    $user_data = $user_model->get_all($user_id);
-                    if(count($user_data) > 0){
-                        $user_name = $user_data;
-                    }
                 }
             require('app/views/profile.php');
         }

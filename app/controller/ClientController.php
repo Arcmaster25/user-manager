@@ -7,13 +7,17 @@
 
 			require('app/models/Client.php');
 
-			if(isset($_POST['name']) && isset($_POST['identificationCard']) && isset($_POST['tradename']) && isset($_POST['phone']) && isset($_POST['direction']) && isset($_POST['legalRepresentative']) && isset($_POST['idLegalRepresentative']) && isset($_POST['emailFE']) && isset($_POST['passwordFE'])){
+			if(isset($_POST['name']) && isset($_POST['identificationCard']) && isset($_POST['identificationCardATV']) && isset($_POST['tradename']) && isset($_POST['regime']) && isset($_POST['phone']) && isset($_POST['direction']) && isset($_POST['legalRepresentative']) && isset($_POST['idLegalRepresentative']) && isset($_POST['emailFE']) && isset($_POST['passwordFE']) && isset($_POST['passwordATV']) && isset($_POST['economicActivity']) && isset($_POST['activityCode']) && isset($_POST['taxReturnType']) && isset($_POST['taxDeclarationPeriod']) && isset($_POST['yearTaxReturn'])){
 
 				$name = $_POST['name'];
 
 				$identificationCard = $_POST['identificationCard'];
 
+				$identificationCardATV = $_POST['identificationCardATV'];
+
 				$tradename = $_POST['tradename'];
+
+				$regime = $_POST['regime'];
 
 				$phone = $_POST['phone'];
 
@@ -27,11 +31,23 @@
 
 				$passwordFE = $_POST['passwordFE'];
 
+				$passwordATV = $_POST['passwordATV'];
+
+				$economicActivity = $_POST['economicActivity'];
+
+				$activityCode = $_POST['activityCode'];
+
+				$taxReturnType = $_POST['taxReturnType'];
+
+				$taxDeclarationPeriod = $_POST['taxDeclarationPeriod'];
+
+				$yearTaxReturn = $_POST['yearTaxReturn'];
+
 				$tiv = isset($_POST['tiv']) && !empty($_POST['tiv']) ? $_POST['tiv'] : "";
 
 				$client = new Client();
 
-				$create_client = $client->store($name, $identificationCard, $tradename, $phone, $direction, $legalRepresentative, $idLegalRepresentative, $emailFE, $passwordFE, $tiv);
+				$create_client = $client->store($name, $identificationCard, $identificationCardATV, $tradename, $regime, $phone, $direction, $legalRepresentative, $idLegalRepresentative, $emailFE, $passwordFE, $passwordATV, $economicActivity, $activityCode, $taxReturnType, $taxDeclarationPeriod, $yearTaxReturn, $tiv);
 
 				if($create_client != -1){
 
@@ -109,18 +125,26 @@
 				}
 			}
 
-			if(isset($_POST['nombre']) && isset($_POST['cedula']) && isset($_POST['nombreComercial']) && isset($_POST['telefono']) && isset($_POST['direccion']) && isset($_POST['representanteLegal']) && isset($_POST['cedulaRepresentanteLegal']) && isset($_POST['correoFE']) && isset($_POST['contrasenaFE'])){
+			if(isset($_POST['nombre']) && isset($_POST['cedula']) && isset($_POST['cedulaATV']) && isset($_POST['nombreComercial']) && isset($_POST['telefono']) && isset($_POST['direccion']) && isset($_POST['regimen']) && isset($_POST['representanteLegal']) && isset($_POST['cedulaRepresentanteLegal']) && isset($_POST['correoFE']) && isset($_POST['contrasenaFE']) && isset($_POST['contrasenaATV']) && isset($_POST['actividadEconomica']) && isset($_POST['codigoActividad']) && isset($_POST['tipoTarifa']) && isset($_POST['periodoTarifa']) && isset($_POST['anoTarifa'])){
 				
 				$arr = array(
 					"nombre" => $_POST['nombre'],
 					"cedula" => $_POST['cedula'],
+					"cedulaATV" => $_POST['cedulaATV'],
 					"nombreComercial" => $_POST['nombreComercial'],
 					"telefono" => $_POST['telefono'],
 					"direccion" => $_POST['direccion'],
+					"regimen" => $_POST['regimen'],
 					"representanteLegal" => $_POST['representanteLegal'],
 					"cedulaRepresentanteLegal" => $_POST['cedulaRepresentanteLegal'],
 					"correoFE" => $_POST['correoFE'],
-					"contrasenaFE" => $_POST['contrasenaFE']
+					"contrasenaFE" => $_POST['contrasenaFE'],
+					"contrasenaATV" => $_POST['contrasenaATV'],
+					"actividadEconomica" => $_POST['actividadEconomica'],
+					"codigoActividad" => $_POST['codigoActividad'],
+					"tipoTarifa" => $_POST['tipoTarifa'],
+					"periodoTarifa" => $_POST['periodoTarifa'],
+					"anoTarifa" => $_POST['anoTarifa']
 				);
 
 				$client = new Client();
