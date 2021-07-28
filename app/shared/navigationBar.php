@@ -32,7 +32,7 @@
                             <a class="nav-link" href="index.php?controller=User&action=store">Registrar Usuario</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="index.php?controller=User&action=index" disabled>Ver usuarios</a>
+                            <a class="nav-link disabled" href="index.php?controller=User&action=index">Ver usuarios</a>
                         </li>
                     <?php 
                         }
@@ -61,7 +61,7 @@
                             ?>
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="index.php?controller=User&action=show" disabled>Perfil</a></li>
+                            <li><a class="dropdown-item disabled" href="index.php?controller=User&action=show">Perfil</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="index.php?controller=User&action=logout">Cerrar Sesión</a></li>
                         </ul>
