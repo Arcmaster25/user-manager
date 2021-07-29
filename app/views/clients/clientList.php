@@ -10,7 +10,7 @@
 	<?php 
 		require_once('app/shared/deleteModal.php');
 	?>
-	<div class="container mt-5">
+	<div class="container mt-3">
 		<table class="table table-striped table-hover">
   			<thead>
     			<tr>
@@ -56,7 +56,7 @@
     						</td>
     						<td class="text-monospace">
     				    		<?php 
-    				    			echo $clientData['tiv'];
+    				    			echo $clientData['tivUrl'];
     				    		?>
     						</td>
     						<td class="text-monospace">

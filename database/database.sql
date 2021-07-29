@@ -25,14 +25,19 @@ CREATE TABLE clients(
 	nota TEXT NOT NULL,
 	representanteLegal VARCHAR(100) NOT NULL,
 	cedulaRepresentanteLegal BIGINT NOT NULL,
-	tiv VARCHAR(255),
+	tivUrl VARCHAR(255),
 	correoFE VARCHAR(100) NOT NULL,
 	contrasenaFE VARCHAR(150) NOT NULL,
 	contrasenaATV VARCHAR(200) NOT NULL,
-	actividadEconomica VARCHAR(180) NOT NULL,
-	codigoActividad BIGINT NOT NULL,
-	tipoTarifa VARCHAR(180) NOT NULL,
-	periodoTarifa VARCHAR(200) NOT NULL,
-	anoTarifa DATE NOT NULL,
 	PRIMARY KEY(clientId)
+);
+
+CREATE TABLE taxReturns(
+	taxId INT NOT NULL AUTO_INCREMENT,
+	tipo VARCHAR(255),
+	tiempo VARCHAR(255),
+	url VARCHAR(255),
+	clientId INT,
+	PRIMARY KEY(taxId),
+	FOREIGN KEY(clientId) REFERENCES clients(clientId)
 );

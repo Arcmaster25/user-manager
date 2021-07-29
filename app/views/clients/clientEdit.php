@@ -6,128 +6,71 @@
 	<title>User Manager</title>
 </head>
 <body>
-	<div class="container mt-5">
+	<div class="container mt-3">
 		<div class="card text-center">
   			<div class="card-header bg-primary">
     			<h5 class="text-center text-white">Cliente</h5>
   			</div>
   			<div class="card-body">
     			<form action="index.php?controller=Client&action=update&id=<?php echo $_GET['id'] ?>" class="row" method="POST">
-  					<div class="input-group mb-3">
-  						<div class="mb-3 col-12">
+  					<div class="input-group mb-3 row">
+  						<div class="mb-3 col-6 col-sp-12">
     						<label for="" class="form-label fw-bold">Nombre</label>
     						<input type="text" class="form-control text-center" name="nombre" value="<?php if(isset($clientData) && !empty($clientData)) { echo $clientData['nombre']; } ?>">
   						</div>
-  						<div class="mb-3 col-12">
+  						<div class="mb-3 col-6 col-sp-12">
+    						<label for="" class="form-labe fw-bold">Regimen</label>
+    						<input type="text" class="form-control text-center" name="regimen" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['regimen']; } ?>">
+  						</div>
+  						<div class="mb-3 col-6 col-sp-12">
     						<label for="" class="form-labe fw-bold">Cédula</label>
     						<input type="number" class="form-control text-center" name="cedula" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['cedula']; } ?>">
   						</div>
-  						<div class="mb-3 col-12">
-    						<label for="" class="form-labe fw-bold">Cédula ATV</label>
-    						<input type="number" class="form-control text-center" name="cedulaATV" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['cedulaATV']; } ?>">
+  						<div class="mb-3 col-6 col-sp-12">
+    						<label class="form-label fw-bold" for="">Representante Legal</label>
+    						<input type="text" class="form-control text-center" name="representanteLegal" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['representanteLegal']; } ?>">
   						</div>
-  						<div class="mb-3 col-12">
+  						<div class="mb-3 col-6 col-sp-12">
     						<label class="form-label fw-bold" for="">Nombre Comercial</label>
     						<input type="text" class="form-control text-center" name="nombreComercial" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['nombreComercial']; } ?>">
   						</div>
-  						<div class="mb-3 col-12">
+  						<div class="mb-3 col-6 col-sp-12">
+    						<label class="form-label fw-bold" for="">Cédula ATV</label>
+    						<input type="number" class="form-control text-center" name="cedulaATV" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['cedulaATV']; } ?>">
+  						</div>
+  						<div class="mb-3 col-6 col-sp-12">
     						<label class="form-label fw-bold" for="">Teléfono</label>
     						<input type="tel" class="form-control text-center" name="telefono" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['telefono']; } ?>">
   						</div>
-  						<div class="mb-3 col-12">
-    						<label class="form-label fw-bold" for="">Dirección</label>
-    						<textarea class="form-control" name="direccion">
-    							<?php 
-    								if(isset($clientData) && !empty($clientData)){ 
-    									echo $clientData['direccion']; 
-    								}
-    							?>
-    						</textarea>
+  						<div class="mb-3 col-6 col-sp-12">
+    						<label class="form-label fw-bold" for="">ContraseñaATV</label>
+    						<input type="text" class="form-control text-center" name="contrasenaATV" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['contrasenaATV']; } ?>">
   						</div>
-  						<div class="mb-3 col-12">
-    						<label class="form-label fw-bold" for="">Regimen</label>
-    						<input type="text" class="form-control text-center" name="regimen" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['regimen']; } ?>">
+  						<div class="mb-3 col-6 col-sp-12">
+    						<label class="form-label fw-bold" for="">Direción</label>
+    						<input type="text" name="direccion" class="form-control" value="<?php if(isset($clientData) && !empty($clientData)){ echo $clientData['direccion']; }?>">
   						</div>
-  						<div class="mb-3 col-12">
-    						<label class="form-label fw-bold" for="">Representante Legal</label>
-    						<input type="text" class="form-control text-center" name="representanteLegal" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['representanteLegal']; } ?>"> 
+  						<div class="mb-3 col-6 col-sp-12">
+    						<label class="form-label fw-bold" for="">CorreoFE</label>
+    						<input type="text" class="form-control text-center" name="correoFE" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['correoFE']; } ?>">
   						</div>
-  						<div class="mb-3 col-12">
+  						<div class="mb-3 col-6 col-sp-12">
     						<label class="form-label fw-bold" for="">Cédula Representante Legal</label>
     						<input type="number" class="form-control text-center" name="cedulaRepresentanteLegal" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['cedulaRepresentanteLegal']; } ?>">
   						</div>
-  						<div class="mb-3 col-12">
+  						<div class=" col-6 col-sp-12">
+    						<label class="form-label fw-bold" for="">ContraseñaFE</label>
+    						<input type="text" class="form-control text-center" name="contrasenaFE" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['contrasenaFE']; } ?>">
+  						</div>
+  						<div class=" col-6 col-sp-12">
     						<label class="form-label fw-bold" for="">TIV</label>
     						<input type="text" class="form-control text-center" disabled>
   						</div>
-  						<div class="mb-3 col-12">
-    						<label class="form-label fw-bold" for="">Correo FE</label>
-    						<input type="text" class="form-control text-center" name="correoFE" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['correoFE']; } ?>">
-  						</div>
-  						<div class=" col-12">
-    						<label class="form-label fw-bold" for="">Contraseña FE</label>
-    						<input type="text" class="form-control text-center" name="contrasenaFE" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['contrasenaFE']; } ?>">
-  						</div>
-  						<div class=" col-12">
-    						<label class="form-label fw-bold" for="">Contraseña ATV</label>
-    						<input type="text" class="form-control text-center" name="contrasenaATV" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['contrasenaATV']; } ?>">
-  						</div>
   					</div>
   					<hr>
-  					<div class="input-group mb-3">
-  						<h4 class="text-center">Actividad Económica</h4>
-  						<div class="mb-3 col-12">
-    						<label class="form-label fw-bold" for="">Nombre</label>
-    						<input type="text" class="form-control text-center" name="actividadEconomica" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['actividadEconomica']; } ?>">
-  						</div>
-  						<div class=" col-12">
-    						<label class="form-label fw-bold" for="">Codigo</label>
-    						<input type="number" class="form-control text-center" name="codigoActividad" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['codigoActividad']; } ?>">
-  						</div>
-  						<!--<table class="table table-striped table-hover">
-  							<thead>
-    							<tr>
-      								<th scope="col">Nombre</th>
-      								<th scope="col">Código</th>
-    							</tr>
-  							</thead>
-  							<tbody>
-  								<td>
-  									<input type="text" class="form-control text-center" name="actividadEconomica" value="<?php //if(isset($clientData) && !empty($clientData))  { echo $clientData['actividadEconomica']; } ?>">
-  								</td>
-  								<td>
-  									<input type="number" class="form-control text-center" name="codigoActividad" value="<?php //if(isset($clientData) && !empty($clientData))  { echo $clientData['codigoActividad']; } ?>">
-  								</td>
-  							</tbody>
-  						</table>-->
-  					</div>
-  					<hr>
-  					<!--<div class="input-group mb-3">
-  						<div class="">
-    						<label class="form-label" for="">Tarifa</label>
-    						<input type="text" readonly class="form-control-plaintext" disabled>
-  						</div>
-  						<div class="">
-    						<label class="form-label" for="">Al Día A</label>
-    						<input type="text" readonly class="form-control-plaintext" disabled>
-  						</div>
-  					</div>
-  					<hr>-->
   					<div class="input-group mb-3">
   						<h4 class="text-center">Declaraciones Tributarias</h4>
-  						<div class="mb-3 col-12">
-    						<label class="form-label fw-bold" for="">Tipo</label>
-    						<input type="text" class="form-control text-center" name="tipoTarifa" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['tipoTarifa']; } ?>">
-  						</div>
-  						<div class="mb-3 col-12">
-    						<label class="form-label fw-bold" for="">Periodo</label>
-    						<input type="datetime-local" class="form-control text-center" name="periodoTarifa" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['periodoTarifa']; } ?>">
-  						</div>
-  						<div class=" col-12">
-    						<label class="form-label fw-bold" for="">Año</label>
-    						<input type="date" class="form-control text-center" name="anoTarifa" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['anoTarifa']; } ?>">
-  						</div>
-  						<!--<table class="table table-striped table-hover">
+  						<table class="table table-striped table-hover">
   							<thead>
     							<tr>
       								<th scope="col">Tipo</th>
@@ -137,16 +80,16 @@
   							</thead>
   							<tbody>
   								<td>
-  									<input type="text" class="form-control text-center" name="tipoTarifa" value="<?php //if(isset($clientData) && !empty($clientData))  { echo $clientData['tipoTarifa']; } ?>">
+  									<input type="text" class="form-control text-center" name="tipoTarifa" value="">
   								</td>
   								<td>
-  									<input type="datetime-local" class="form-control text-center" name="periodoTarifa" value="<?php //if(isset($clientData) && !empty($clientData))  { echo $clientData['periodoTarifa']; } ?>">
+  									<input type="datetime-local" class="form-control text-center" name="periodoTarifa" value="">
   								</td>
   								<td>
-  									<input type="date" class="form-control text-center" name="anoTarifacodigoActividad" value="<?php //if(isset($clientData) && !empty($clientData))  { echo $clientData['anoTarifa']; } ?>">
+  									<input type="date" class="form-control text-center" name="anoTarifacodigoActividad" value="">
   								</td>
   							</tbody>
-  						</table>-->
+  						</table>
   					</div>
   					<hr>
   					<button type="submit" class="btn btn-success">Editar Datos</button>

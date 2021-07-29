@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container-fluid">
         <?php 
             if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){
@@ -60,7 +60,7 @@
                                 echo $_SESSION['user_name'];
                             ?>
                         </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item disabled" href="index.php?controller=User&action=show">Perfil</a></li>
                             <li><hr class="dropdown-divider"></li>
                             <li><a class="dropdown-item" href="index.php?controller=User&action=logout">Cerrar Sesión</a></li>

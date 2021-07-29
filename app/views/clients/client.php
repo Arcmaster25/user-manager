@@ -6,7 +6,7 @@
 	<title>User Manager</title>
 </head>
 <body>
-	<div class="container mt-5">
+	<div class="container mt-3">
 		<div class="card text-center">
   			<div class="card-header bg-primary">
     			<h5 class="text-center text-white">Cliente</h5>
@@ -74,39 +74,7 @@
   						</div>
   					</div>
   					<hr>
-  					<div class="input-group mb-3">
-  						<h4 class="text-center">Actividad Económica</h4>
-  						<table class="table table-striped table-hover">
-  							<thead>
-    							<tr>
-      								<th scope="col">Nombre</th>
-      								<th scope="col">Código</th>
-    							</tr>
-  							</thead>
-  							<tbody>
-  								<tr>
-  									<td>
-  										<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['actividadEconomica']; } ?>
-  									</td>
-  									<td>
-  										<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['codigoActividad']; } ?>
-  									</td>
-  								</tr>
-  							</tbody>
-  						</table>
-  					</div>
   					<hr>
-  					<!--<div class="input-group mb-3">
-  						<div class="">
-    						<label class="form-label" for="">Tarifa</label>
-    						<input type="text" readonly class="form-control-plaintext">
-  						</div>
-  						<div class="">
-    						<label class="form-label" for="">Al Día A</label>
-    						<input type="text" readonly class="form-control-plaintext">
-  						</div>
-  					</div>
-  					<hr>-->
   					<div class="input-group mb-3">
   						<h4 class="text-center">Declaraciones Tributarias</h4>
   						<table class="table table-striped table-hover">
