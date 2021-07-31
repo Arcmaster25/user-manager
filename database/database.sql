@@ -10,21 +10,20 @@ CREATE TABLE permits(
 	tipo VARCHAR(20) NOT NULL,
 	userId INT,
 	PRIMARY KEY(permitsId),
-	FOREIGN KEY(userId) REFERENCES user(id)
+	FOREIGN KEY(userId) REFERENCES user(id) ON DELETE CASCADE
 );
 
 CREATE TABLE clients(
 	clientId INT NOT NULL AUTO_INCREMENT,
 	nombre VARCHAR(100) NOT NULL,
-	cedula BIGINT NOT NULL,
+	cedula VARCHAR(255) NOT NULL,
 	cedulaATV VARCHAR(200) NOT NULL,
 	nombreComercial VARCHAR(150) NOT NULL,
-	telefono BIGINT NOT NULL,
+	telefono VARCHAR(255) NOT NULL,
 	direccion TEXT NOT NULL,
 	regimen VARCHAR(255) NOT NULL,
-	nota TEXT NOT NULL,
 	representanteLegal VARCHAR(100) NOT NULL,
-	cedulaRepresentanteLegal BIGINT NOT NULL,
+	cedulaRepresentanteLegal VARCHAR(255) NOT NULL,
 	tivUrl VARCHAR(255),
 	correoFE VARCHAR(100) NOT NULL,
 	contrasenaFE VARCHAR(150) NOT NULL,
@@ -36,8 +35,9 @@ CREATE TABLE taxReturns(
 	taxId INT NOT NULL AUTO_INCREMENT,
 	tipo VARCHAR(255),
 	tiempo VARCHAR(255),
-	url VARCHAR(255),
+	taxRetun VARCHAR(255),
+	receipt VARCHAR(255),
 	clientId INT,
 	PRIMARY KEY(taxId),
-	FOREIGN KEY(clientId) REFERENCES clients(clientId)
+	FOREIGN KEY(clientId) REFERENCES clients(clientId) ON DELETE CASCADE
 );

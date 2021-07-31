@@ -13,8 +13,8 @@
 		}
 
 		//New client
-		public function store($name, $identificationCard, $identificationCardATV, $tradename, $regime, $phone, $direction, $nameLegalRepresentative, $idLegalRepresentative, $emailFE, $passwordFE, $passwordATV, $tiv = ""){
-			$query = "INSERT INTO clients (nombre, cedula, cedulaATV, nombreComercial, telefono, direccion, regimen, representanteLegal, cedulaRepresentanteLegal, tiv, correoFE, contrasenaFE, contrasenaATV) VALUES ('$name', '$identificationCard', '$identificationCardATV', '$tradename', '$phone', '$direction', '$regime', '$nameLegalRepresentative', '$idLegalRepresentative', '$tiv', '$emailFE', '$passwordFE', '$passwordATV')";
+		public function store($name = "", $identificationCard = "", $identificationCardATV = "", $tradename = "", $regime = "", $phone = "", $direction = "", $nameLegalRepresentative = "", $idLegalRepresentative = "", $emailFE = "", $passwordFE = "", $passwordATV = "", $tiv = ""){
+			$query = "INSERT INTO clients (nombre, cedula, cedulaATV, nombreComercial, telefono, direccion, regimen, representanteLegal, cedulaRepresentanteLegal, tivUrl, correoFE, contrasenaFE, contrasenaATV) VALUES ('$name', '$identificationCard', '$identificationCardATV', '$tradename', '$phone', '$direction', '$regime', '$nameLegalRepresentative', '$idLegalRepresentative', '$tiv', '$emailFE', '$passwordFE', '$passwordATV')";
 			$store = $this->connection->query($query);
 			return $this->connection->affected_rows;
 		}
@@ -24,6 +24,13 @@
 			$query = "SELECT clientId, nombre, cedula, cedulaATV, tivUrl, correoFE, contrasenaFE, contrasenaATV FROM clients";
 			$get_all = $this->connection->query($query);
 			return $get_all->fetch_all(MYSQLI_ASSOC);
+		}
+
+		//Get by name
+		public function get_by_name($name){
+			$query = "SELECT * FROM clients WHERE nombre = '$name'";
+			$get_by_name = $this->connection->query($query);
+			return $get_by_name->fetch_assoc();
 		}
 
 		//Get client
@@ -40,6 +47,7 @@
 			return $this->connection->affected_rows;
 		}
 
+		//Update client 
 		public function update($id, $arr){
 			$query = "UPDATE clients SET";
 			$client = $arr;
@@ -53,5 +61,20 @@
 			$update = $this->connection->query($query);
 			return $this->connection->affected_rows;
 		}
+
+		//Update client tiv
+		public function addTIV($clientId, $tivUrl){
+			$query = "UPDATE clients SET tivUrl = '$tivUrl' WHERE clientId = '$clientId'";
+			$addTIV = $this->connection->query($query);
+			return $this->connection->affected_rows;
+		}
+
+		//Delete client tiv
+		public function destroyTIV($clientId){
+			$query = "UPDATE clients SET tivUrl = '' WHERE clientId = '$clientId'";
+			$addTIV = $this->connection->query($query);
+			return $this->connection->affected_rows;
+		}
+
 	}
 ?>

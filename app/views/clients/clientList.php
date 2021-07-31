@@ -55,9 +55,11 @@
     				    		?>
     						</td>
     						<td class="text-monospace">
-    				    		<?php 
-    				    			echo $clientData['tivUrl'];
-    				    		?>
+    				    		<?php if($clientData['tivUrl'] == ""){ ?>
+    				    			<p>No existe TIV</p>
+    				    		<?php }else{ ?>
+    				    			<a href="<?php echo $clientData['tivUrl'] ?>" class="btn btn-outline-info text-white">Ver</a>
+    				    		<?php } ?>
     						</td>
     						<td class="text-monospace">
     				    		<?php 

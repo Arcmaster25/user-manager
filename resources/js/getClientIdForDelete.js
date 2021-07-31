@@ -14,7 +14,7 @@ export default function getClientId(){
 
 		for(let tds of tr){
 
-			if(tds.children.length != 0){
+			if(tds.children.length == 3){
 
 				let button = tds.children[2];
 
@@ -36,3 +36,5 @@ export default function getClientId(){
 	}
 
 }
+
+getClientId();

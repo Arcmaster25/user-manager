@@ -8,95 +8,109 @@
 <body>
 	<div class="container mt-3">
 		<div class="card text-center">
-  			<div class="card-header bg-primary">
+  			<div class="card-header bg-dark">
     			<h5 class="text-center text-white">Cliente</h5>
   			</div>
   			<div class="card-body">
     			<form class="row">
   					<div class="input-group mb-3">
-  						<div class="mb-3 col-12">
+  						<div class="input-group mb-3 row">
+  						<div class="mb-3 col-6 col-sp-12">
     						<label for="" class="form-label fw-bold">Nombre</label>
-    						<input type="text" readonly class="form-control-plaintext text-center" value="<?php if(isset($clientData) && !empty($clientData)) { echo $clientData['nombre']; } ?>">
+    						<input type="text" class="form-control-plaintext text-center" readonly name="name" value="<?php if(isset($clientData) && !empty($clientData)) { echo $clientData['nombre']; } ?>">
   						</div>
-  						<div class="mb-3 col-12">
+  						<div class="mb-3 col-6 col-sp-12">
+    						<label for="" class="form-labe fw-bold">Regimen</label>
+    						<input type="text" class="form-control-plaintext text-center" readonly name="regime" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['regimen']; } ?>">
+  						</div>
+  						<div class="mb-3 col-6 col-sp-12">
     						<label for="" class="form-labe fw-bold">Cédula</label>
-    						<input type="text" readonly class="form-control-plaintext text-center" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['cedula']; } ?>">
+    						<input type="text" class="form-control-plaintext text-center" readonly name="identificationCard" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['cedula']; } ?>">
   						</div>
-  						<div class="mb-3 col-12">
-    						<label for="" class="form-labe fw-bold">Cédula ATV</label>
-    						<input type="text" readonly class="form-control-plaintext text-center" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['cedulaATV']; } ?>">
-  						</div>
-  						<div class="mb-3 col-12">
-    						<label class="form-label fw-bold" for="">Nombre Comercial</label>
-    						<input type="text" readonly class="form-control-plaintext text-center" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['nombreComercial']; } ?>">
-  						</div>
-  						<div class="mb-3 col-12">
-    						<label class="form-label fw-bold" for="">Teléfono</label>
-    						<input type="text" readonly class="form-control-plaintext text-center" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['telefono']; } ?>">
-  						</div>
-  						<div class="mb-3 col-12">
-    						<label class="form-label fw-bold" for="">Dirección</label>
-    						<textarea class="form-control-plaintext text-center" readonly>
-    							<?php 
-    								if(isset($clientData) && !empty($clientData)){ 
-    									echo $clientData['direccion']; 
-    								}
-    							?>
-    						</textarea>
-  						</div>
-  						<div class="mb-3 col-12">
-    						<label class="form-label fw-bold" for="">Regimen</label>
-    						<input type="text" readonly class="form-control-plaintext text-center" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['regimen']; } ?>">
-  						</div>
-  						<div class="mb-3 col-12">
+  						<div class="mb-3 col-6 col-sp-12">
     						<label class="form-label fw-bold" for="">Representante Legal</label>
-    						<input type="text" readonly class="form-control-plaintext text-center" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['representanteLegal']; } ?>"> 
+    						<input type="text" class="form-control-plaintext text-center" readonly name="legalRepresentative" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['representanteLegal']; } ?>">
   						</div>
-  						<div class="mb-3 col-12">
+  						<div class="mb-3 col-6 col-sp-12">
+    						<label class="form-label fw-bold" for="">Nombre Comercial</label>
+    						<input type="text" class="form-control-plaintext text-center" readonly name="tradename" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['nombreComercial']; } ?>">
+  						</div>
+  						<div class="mb-3 col-6 col-sp-12">
+    						<label class="form-label fw-bold" for="">Cédula ATV</label>
+    						<input type="text" class="form-control-plaintext text-center" readonly name="identificationCardATV" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['cedulaATV']; } ?>">
+  						</div>
+  						<div class="mb-3 col-6 col-sp-12">
+    						<label class="form-label fw-bold" for="">Teléfono</label>
+    						<input type="tel" class="form-control-plaintext text-center" readonly name="phone" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['telefono']; } ?>">
+  						</div>
+  						<div class="mb-3 col-6 col-sp-12">
+    						<label class="form-label fw-bold" for="">ContraseñaATV</label>
+    						<input type="text" class="form-control-plaintext text-center" readonly name="passwordATV" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['contrasenaATV']; } ?>">
+  						</div>
+  						<div class="mb-3 col-6 col-sp-12">
+    						<label class="form-label fw-bold" for="">Direción</label>
+    						<input type="text" name="direction" class="form-control-plaintext" readonly value="<?php if(isset($clientData) && !empty($clientData)){ echo $clientData['direccion']; }?>">
+  						</div>
+  						<div class="mb-3 col-6 col-sp-12">
+    						<label class="form-label fw-bold" for="">CorreoFE</label>
+    						<input type="text" class="form-control-plaintext text-center" readonly name="emailFE" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['correoFE']; } ?>">
+  						</div>
+  						<div class="mb-3 col-6 col-sp-12">
     						<label class="form-label fw-bold" for="">Cédula Representante Legal</label>
-    						<input type="text" readonly class="form-control-plaintext text-center" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['cedulaRepresentanteLegal']; } ?>">
+    						<input type="text" class="form-control-plaintext text-center" readonly name="idLegalRepresentative" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['cedulaRepresentanteLegal']; } ?>">
   						</div>
-  						<div class="mb-3 col-12">
+  						<div class=" col-6 col-sp-12">
+    						<label class="form-label fw-bold" for="">ContraseñaFE</label>
+    						<input type="text" class="form-control-plaintext text-center" readonly name="passwordFE" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['contrasenaFE']; } ?>">
+  						</div>
+  						<div class=" col-6 col-sp-12">
     						<label class="form-label fw-bold" for="">TIV</label>
-    						<input type="text" readonly class="form-control-plaintext text-center" disabled>
-  						</div>
-  						<div class="mb-3 col-12">
-    						<label class="form-label fw-bold" for="">Correo FE</label>
-    						<input type="text" readonly class="form-control-plaintext text-center" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['correoFE']; } ?>">
-  						</div>
-  						<div class=" col-12">
-    						<label class="form-label fw-bold" for="">Contraseña FE</label>
-    						<input type="text" readonly class="form-control-plaintext text-center" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['contrasenaFE']; } ?>">
-  						</div>
-  						<div class=" col-12">
-    						<label class="form-label fw-bold" for="">Contraseña ATV</label>
-    						<input type="text" readonly class="form-control-plaintext text-center" value="<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['contrasenaATV']; } ?>">
+    						<?php if($clientData['tivUrl'] == ""){ ?>
+    							<input type="text" class="form-control-plaintext text-center" readonly value="No se a agregado una TIV">
+    						<?php }else{ ?>
+    							<a href="<?php echo $clientData['tivUrl'] ?>" class="d-block btn btn-outline-info text-white">Ver</a>
+    						<?php } ?>
   						</div>
   					</div>
   					<hr>
-  					<hr>
-  					<div class="input-group mb-3">
+  					<div class="input-group mb-3 text-center">
   						<h4 class="text-center">Declaraciones Tributarias</h4>
   						<table class="table table-striped table-hover">
   							<thead>
     							<tr>
       								<th scope="col">Tipo</th>
-      								<th scope="col">Periodo</th>
-      								<th scope="col">Año</th>
+      								<th scope="col">Tiempo</th>
+      								<th scope="col">Declaracion Tributaria</th>
+      								<th scope="col">Recibo</th>
     							</tr>
   							</thead>
   							<tbody>
-  								<tr>
-  									<td>
-  										<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['tipoTarifa']; } ?>
-  									</td>
-  									<td>
-  										<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['periodoTarifa']; } ?>
-  									</td>
-  									<td>
-  										<?php if(isset($clientData) && !empty($clientData))  { echo $clientData['anoTarifa']; } ?>
-  									</td>
-  								</tr>
+  								<?php if($taxReturnData == ""){ ?>
+  									<div class="alert alert-info text-center m-2" role="alert">
+  										Este cliente no tiene declaraciones tributarias creadas
+									</div>
+  								<?php }else{ ?>
+  									<?php foreach($taxReturnData as $taxReturnFile){ ?>
+  										<tr>
+  											<td>
+  												<?php echo $taxReturnFile['tipo'] ?>
+  											</td>
+  											<td>
+  												<?php echo $taxReturnFile['tiempo'] ?>
+  											</td>
+  											<td>
+  												<a href="<?php echo $taxReturnFile['taxReturn'] ?>" class="btn btn-outline-info text-white">Ver</a>
+  											</td>
+  											<td>
+  												<?php if($taxReturnFile['receipt'] == ""){ ?>
+  													<p class="text-monospace">Esta declaración no tiene resivo</p>
+  												<?php }else{ ?>
+  													<a href="<?php echo $taxReturnFile['receipt'] ?>" class="btn btn-outline-info text-white">Ver</a>
+  												<?php } ?>
+  											</td>
+  										</tr>
+  									<?php } ?>
+  								<?php } ?>
   							</tbody>
   						</table>
   					</div>
